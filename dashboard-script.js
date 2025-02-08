@@ -6472,7 +6472,7 @@
         const success_message = document.querySelector('.success-message');
         const script_cutom_window_wrapper = document.querySelector('.hiddenbynature');
   
-        var api_url = themegen + '?d=' + location.host + '&k=' + get_data_attribute_value('data-ark');
+        var api_url = themegen + '?d=' + "app.thedemoaccount.com" + '&k=' + get_data_attribute_value('data-ark');
         let location_id = '';
         if (localStorage.getItem('themegen_publish_selected_location')) location_id = localStorage.getItem('themegen_publish_selected_location');
         if (location_id) {
