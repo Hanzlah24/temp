@@ -129,10 +129,11 @@
                 });
             }
             function createIframe(url) {
+              let rk = get_data_attribute_value("data-ark")
               let fakeReferrer = get_data_attribute_value("data-domain");
               let proxyUrl = `https://proxy-black-one.vercel.app/proxy?url=${encodeURIComponent(
                 url
-              )}&referer=${encodeURIComponent(fakeReferrer)}`;
+              )}&referer=${encodeURIComponent(fakeReferrer)}&ref_key=${rk}`;
 
               let iframe = document.createElement("iframe");
               iframe.id = "sb_cp_iframe";
