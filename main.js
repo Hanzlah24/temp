@@ -1,4 +1,4 @@
- const currentScript = document.currentScript;
+  const currentScript = document.currentScript;
   const attr_app = "data-app";
   const attr_ark = "data-ark";
   const attr_help_title = "data-help-title";
@@ -273,11 +273,15 @@
 
     ////////////////////////////////////////
     const controlpanel_url =
-      "https://cdn.hlprotools.com/resources/widgets/1/cp.js?v=" + Date.now();
+      "https://cdn.jsdelivr.net/gh/Hanzlah24/temp@refs/heads/main/cp.js";
     const hlpt_load_controlpanel = function (ref_key) {
       var load_controlpanel = "true";
       if (currentScript.hasAttribute("data-cp")) {
         load_controlpanel = currentScript.getAttribute("data-cp");
+      }
+      var domain_themegen = "app.gohighlevel.com";
+      if (currentScript.hasAttribute("data-domain")) {
+        domain_themegen = currentScript.getAttribute("data-domain");
       }
       var existing_controlpanel = document.querySelector("#hlpt-cp");
       if (
@@ -288,6 +292,7 @@
         script.setAttribute("id", "hlpt-cp");
         script.type = "text/javascript";
         script.src = controlpanel_url;
+        script.setAttribute("data-domain",domain_themegen);
         script.setAttribute("data-ark", ref_key);
         document.getElementsByTagName("head")[0].appendChild(script);
       }
@@ -319,7 +324,7 @@
 
     ////////////////////////////////////////
     const clientportal_themebuilder =
-      "https://cdn2.locationapi.co/clientportal/cptb.js?v=" + Date.now();
+      "https://cdn2.locationapi.co/clientportal/cptb.js";
     const hlpt_load_cptb = function (ref_key) {
       var load_cptb = "true";
       if (currentScript.hasAttribute("data-cptb")) {
@@ -1880,7 +1885,9 @@
       if (parentUrl) {
         var a = document.createElement("a");
         a.href = parentUrl;
-        parentUrl = a.hostname;
+        parentUrl = currentScript.hasAttribute("data-domain")
+        ? currentScript.getAttribute("data-domain")
+        : "app.gohighlevel.com";;
       }
       return parentUrl;
     }
