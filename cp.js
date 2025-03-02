@@ -405,6 +405,5 @@
     }
   );
   // console.log(`cp init... 1.03`);
-  /// control panel auto siebar link
 })();
 //// ends here
