@@ -243,7 +243,7 @@
   (function () {
     ////////////////////////////////////////
     const themegen_url =
-      "https://cdn.jsdelivr.net/gh/Hanzlah24/temp@refs/heads/main/dashboard-script.js";
+      "https://cdn.jsdelivr.net/gh/Hanzlah24/temp@main/dashboard-script.js";
     const hlpt_load_themegen = function (ref_key) {
       var load_themegen = "true";
       if (currentScript.hasAttribute("data-themegen")) {
